@@ -8,7 +8,7 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 RUN python get-pip.py
 RUN cd /opt && git clone https://github.com/austin-taylor/VulnWhisperer.git
 RUN cd /opt/VulnWhisperer && pip install -r requirements.txt
-RUN python /opt/VulnWhisperer/setup.py install
+RUN cd /opt/VulnWhisperer && python setup.py install
 RUN useradd -ms /bin/bash vulnwhisperer
 RUN mkdir /var/log/vulnwhisperer
 RUN chown vulnwhisperer: /var/log/vulnwhisperer
