@@ -5,7 +5,7 @@ MAINTAINER Justin Henderson justin@hasecuritysolutions.com
 RUN yum update -y \
     && yum install -y python python-devel git gcc
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py
-RUN cd /opt && git clone https://github.com/austin-taylor/VulnWhisperer.git
+RUN cd /opt && git clone --branch 1.7.1 https://github.com/austin-taylor/VulnWhisperer.git
 RUN cd /opt/VulnWhisperer/deps/qualysapi && python setup.py install
 RUN cd /opt/VulnWhisperer && pip install -r requirements.txt
 RUN cd /opt/VulnWhisperer && python setup.py install
